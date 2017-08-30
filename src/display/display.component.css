@@ -1,0 +1,15 @@
+#displayWrapper{
+
+    display: inline-block;
+    width: 50%;
+    background-color: black;
+
+}
+
+
+#displayed{
+
+    width: 100% ;
+
+
+}
