@@ -21,12 +21,20 @@ export class AppComponent implements OnInit{
   @ViewChild( DisplayComponent ) display : DisplayComponent;
   @ViewChild( FileBrowserComponent ) filebrowser : FileBrowserComponent;
 
-  
+  currentUrl: string = "";
+
+processFileBrowserChange(event){
+
+  this.currentUrl = event ;
+
+}
 
   ngOnInit(){
 
     console.log("AppComponent inited");
     
+
+
   }
 
 

@@ -1,0 +1,17 @@
+
+
+                app.component              imagedata (srvc)
+                    /\
+                   /  \
+                  /    \
+                 /      \  
+          display       filebrowser
+        -recebe URL      -emite URL
+
+
+    1 - comunic entre appcompomemnt e filebrowser ?
+
+
+
+    Um gajo escreve no FileBrowser -> e esta merda devia ser emitida para o app.component ....
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -10,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 
 export class FileBrowserComponent implements OnInit {
 
-  private currentFileUrl : string ;
-  private inputString: string;
+  @Input()
+  currentFileUrl : string ;
+
+
+  @Output()
+  change: EventEmitter<string> = new EventEmitter<string>();
 
 
   constructor() { 
@@ -23,9 +27,16 @@ export class FileBrowserComponent implements OnInit {
   public setCurrentFileUrl( targetFileUrl: string ) : void{
 
       this.currentFileUrl = targetFileUrl;
+      this.change.emit( this.currentFileUrl );
 
   }
 
+
+
+  update(){
+    this.setCurrentFileUrl("/path/to/some/shit");
+    console.log("Things were updated");
+  }
 
   ngOnInit() {
 
