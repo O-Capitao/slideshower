@@ -1,4 +1,4 @@
 <div id = "browserWrapper">
-<input [(ngModel)]="inputString" placeholder="path to image">
-<button (click)="update()">Submit File Url</button>
+    <input #box [(ngModel)]="inputString" placeholder="path to image" (keydown.enter)="emitUrl(box.value)">
+    <button (click)="clearTextbox()">Clear</button>
 </div>

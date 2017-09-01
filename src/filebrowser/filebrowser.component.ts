@@ -10,7 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class FileBrowserComponent implements OnInit {
 
-  @Input()
+  //@Input()
   currentFileUrl : string ;
 
 
@@ -19,30 +19,24 @@ export class FileBrowserComponent implements OnInit {
 
 
   constructor() { 
-    
     this.currentFileUrl = "";
-
-  }
-
-  public setCurrentFileUrl( targetFileUrl: string ) : void{
-
-      this.currentFileUrl = targetFileUrl;
-      this.change.emit( this.currentFileUrl );
-
   }
 
 
+  emitUrl( value: string ){
+    console.log("calling emitUrl()" );
+    
+    this.currentFileUrl = value ;
+    this.change.emit( this.currentFileUrl );
 
-  update(){
-    this.setCurrentFileUrl("/path/to/some/shit");
-    console.log("Things were updated");
+  }
+
+  clearTextbox(){
+    this.emitUrl("");
   }
 
   ngOnInit() {
-
       console.log("FileBrowserComponent inited");
-      
-    
   }
 
 }

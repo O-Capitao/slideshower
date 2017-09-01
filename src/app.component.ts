@@ -18,16 +18,24 @@ import { FileBrowserComponent } from './filebrowser/filebrowser.component';
 export class AppComponent implements OnInit{
 
 
-  @ViewChild( DisplayComponent ) display : DisplayComponent;
-  @ViewChild( FileBrowserComponent ) filebrowser : FileBrowserComponent;
+  //@ViewChild( DisplayComponent ) display : DisplayComponent;
+  //@ViewChild( FileBrowserComponent ) filebrowser : FileBrowserComponent;
 
   currentUrl: string = "";
 
-processFileBrowserChange(event){
+  processFileBrowserChange( event : Event ){
 
-  this.currentUrl = event ;
 
-}
+    console.log("In app.component:")
+    //console.log(event.srcElement.value );
+    
+    //console.log( event );
+    
+    //this.currentUrl = event ;
+
+    this.currentUrl = (event.srcElement) ? event.srcElement.value : "" ;
+
+  }
 
   ngOnInit(){
 

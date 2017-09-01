@@ -13,5 +13,11 @@
 
 
 
-    Um gajo escreve no FileBrowser -> e esta merda devia ser emitida para o app.component ....
+    Um gajo escreve no FileBrowser -> 
+        e esta merda devia ser emitida para o app.component ....
 
+
+
+
+
+2 - Em vez de passar uma string pre def - passar o conteudo do input .
